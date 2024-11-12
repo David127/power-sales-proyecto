@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto de Gestión de Tareas con Next.js, TypeScript, TailwindCSS y ShadCN
 
-## Getting Started
+Este es un proyecto de gestión de tareas (CRUD) desarrollado en **Next.js** (v14 o superior) usando **TypeScript** para la tipificación estática, **TailwindCSS** para el diseño visual, y **ShadCN** para los componentes de la interfaz.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Lista de Tareas**: Muestra una lista de tareas existentes con título, descripción, estado y fecha de vencimiento.
+- **Crear Nueva Tarea**: Permite a los usuarios crear una nueva tarea especificando el título, descripción, estado (Pendiente o Completada) y fecha de vencimiento.
+- **Editar Tarea**: Cada tarea se puede editar para modificar el título, descripción, estado y fecha de vencimiento.
+- **Eliminar Tarea**: Permite la eliminación de tareas individuales de la lista.
+- **Persistencia de Datos**: Las tareas se guardan en `localStorage`, lo que permite que los datos persistan al recargar la página.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación y Ejecución
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/David127/power-sales-proyecto.git
+   cd power-sales-proyecto
+   ```
 
-## Learn More
+2. **Instalar las dependencias**:
+  ```bash
+  npm install
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Ejecutar el proyecto**:
+  ```bash
+  npm run dev
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Persistencia de datos usando localstorage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Se realiza la persistencia de datos con el localstorage para mantener la información guardada si recargamos la web, manteniento las tareas con las que estabamos trabajando a nuestra disposición
 
-## Deploy on Vercel
+## Toma de decisiones
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Se utilizo context API para realizar un mejor manejo del estado global de las tareas, permitiendo que componentes y páginas accedan y actualicen la lsita de tareas fácilmente sin necesidad de pasar props entre múltiples niveles.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Se agrega un buscador por el nombre de la tarea para realizar una búsqueda más exacta.
+
